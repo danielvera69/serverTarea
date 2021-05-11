@@ -1,3 +1,4 @@
+// importaciones de archivos
 // importar el framework express
 const express = require('express')
 // importa la coneccion a la DB
@@ -10,7 +11,7 @@ const cors = require('cors')
 const app = express()
 // middlewares
 // habilitar espress.json para enviar un json por lo tanto en el header de la peticion: Content-Type:aplication/json. y en el body se seleciona json para escribir los datos a enviar
-app.use(express.json({extended:true}))
+app.use(express.json({ extended: true }))
 // habilitar cors
 app.use(cors())
 // establecer la coneccion a la DB
@@ -24,10 +25,10 @@ const PORT = process.env.PORT || 4000
 // })
 // Middleware de ruttas
 // importar las rutas.
-app.use('/api/usuarios',require('./routes/usuarios'))
-app.use('/api/auth',require('./routes/auth'))
-app.use('/api/proyectos',require('./routes/proyectos'))
-app.use('/api/tareas',require('./routes/tarea'))
+app.use('/api/usuarios', require('./routes/usuarios'))
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/proyectos', require('./routes/proyectos'))
+app.use('/api/tareas', require('./routes/tarea'))
 // arrancar el servidor app
 app.listen(PORT, () => {
     console.log(`el servidor funcionando en Puerto: ${PORT}`);
